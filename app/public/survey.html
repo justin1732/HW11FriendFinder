@@ -203,26 +203,26 @@
             var currentURL = window.location.origin;
         
 
-$.ajax({
-    type: 'POST',
-    data:userData,
-    url:"/api/friends",
-    success: function (res){
-        $("#match-name").text(res.name);
-        $("#match-img").attr("src", res.photo);
-        $("#resultsModal").modal("toggle");
-    }
-})
+// $.ajax({
+//     type: 'POST',
+//     data:userData,
+//     url:"/api/friends",
+//     success: function (res){
+//         $("#match-name").text(res.name);
+//         $("#match-img").attr("src", res.photo);
+//         $("#resultsModal").modal("toggle");
+//     }
+// })
 
-            // $.post(currentURL + "/api/friends", userData, function (data){
-            //     if (data.name !== undefined){
-            //         matchStatus.html('Your new best friend...')
-            //         modalBody.html('<p>...is ' + data.name + '!</p><img src="' + data.photo + '" height="200">');
-            //     }
-            //     $("match-img").attr("src", res.photo);
-            //     $("#results-modal").modal("toggle");
-            //     // alert("working");
-            // });
+            $.post(currentURL + "/api/friends", userData, function (data){
+                if (data.name !== undefined){
+                    matchStatus.html('Your new best friend...')
+                    modalBody.html('<p>...is ' + data.name + '!</p><img src="' + data.photo + '" height="200">');
+                }
+                // $("match-img").attr("src", res.photo);
+                $("#resultsModal").modal("toggle");
+                // alert("working");
+            });
         }
         else {
             alert ("Please fill out all forms before continuing!");
