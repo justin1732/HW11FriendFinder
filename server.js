@@ -12,8 +12,8 @@ app.use(bodyParser.raw({type: 'application/vnd.custom-type'}));
 
 app.use(bodyParser.text({type: 'text/html'}));
 
-require("../app/routing/apiRoutes.js")(app);
-require("../app/routing/htmlRoutes.js")(app);
+require("../HW11FriendFinder/app/routing/apiRoutes.js")(app);
+require("../HW11FriendFinder/app/routing/htmlRoutes.js")(app);
 
 app.listen(PORT, function (){
     console.log("Friend Finding on PORT: " + PORT);
